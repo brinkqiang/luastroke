@@ -26,7 +26,19 @@ install cmake
 
 ## Intro
 luastroke
+
+win
+```
+build.bat
+cd bin/relwithdebinfo
+lua ../script/main.lua
+```
+
+linux
 ```cpp
+bash build.sh
+cd bin/relwithdebinfo
+lua ../script/main.lua
 ```
 ## Contacts
 [![Join the chat](https://badges.gitter.im/brinkqiang/luastroke/Lobby.svg)](https://gitter.im/brinkqiang/luastroke)
