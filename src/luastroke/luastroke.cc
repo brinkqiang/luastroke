@@ -964,16 +964,16 @@ static int gb2312_stroke_count[] =
 /* F8 */
 };
 
-int GetGB2312StrokeCount(unsigned char c1, unsigned char c2)
+uint32_t GetGB2312StrokeCount(uint8_t c1, uint8_t c2)
 {
-    unsigned offset;
+    uint32_t offset;
 
     if ( c1 < 0xB0 || c1 > 0xF7 || c2 < 0xA1 || c2 > 0xFE )
     {
         // not a valid gb2312 Chinese character
-        return -1;
+        return 0;
     }
-    offset = ((unsigned)c1-0xB0) * (0xFE - 0xA0) + ((unsigned)c2-0xA1);
+    offset = ((uint32_t)c1-0xB0) * (0xFE - 0xA0) + ((uint32_t)c2-0xA1);
     return gb2312_stroke_count[offset];
 }
 
